@@ -1,9 +1,44 @@
-lesson 1
-building your first web pages
-	common html terms, 
+lesson 1 / building your first web pages
 
-	*************************************************************************
 	common html terms
+	html document structure
+	common css terms 
+
+*************************************************************************
+common html terms
+
+element    => defines the content of the objects on a page 
+							examples: h1, a, p, div
+tags		   => the brackets <> surrounding an element make it a tag
+attributes => properties that provide additional information about an element
+							examples: id, class, src, href
+							properties have a name (class) and a value (wrapper)
 
 
+*************************************************************************
+html document structure 
+	 
+  html skeleton 
 
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<title>Hello World</title>
+		</head>
+		<body>
+			<h1>Hello World</h1>
+			<p>This is a web page.</p>
+		</body>
+	</html>
+
+
+*************************************************************************
+common css terms
+
+selectors	        => are used to target elements with the styles we want to apply, they are followed by {} to enclose 
+properties			  =>
+values				   	=>  					
+class selectors   =>
+id selectors      => 
+other selectors   =>
