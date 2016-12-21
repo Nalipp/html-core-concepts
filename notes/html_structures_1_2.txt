@@ -1,11 +1,13 @@
 lesson 1 / building your first web pages
 
 	common html terms
-	html document structure
+	html document skeleton
 	common css terms 
   referencing css
 	css resets
-
+	semantic code
+  html structure
+	links
 
 *************************************************************************
 common html terms
@@ -19,7 +21,7 @@ attributes => properties that provide additional information about an element
 
 
 *************************************************************************
-html document structure 
+html document skeleton 
 	 
   html skeleton 
 
@@ -58,6 +60,52 @@ referencing css
 
 *************************************************************************
 css resets
+
 	helps insure pages are rendered consistently accross different browsers
   examples: http://meyerweb.com/eric/tools/css/reset/
 						http://necolas.github.io/normalize.css/
+
+
+*************************************************************************
+semantic code
+
+	writing semantic code is the practice of using the appropriate elements to structure the page in a way that is easy to read and work with
+	semantic code shows clearly what each peice of content is about
+  examples: <header><ul><li><aside>
+
+	<div> and <spans>
+  do not have any semantic value because they are used as generic containers for styling
+
+  <div>  => is a block element and used for larger groupings of content
+						div's can help organize the sites layout and design
+						they take up a whole block and are stacked on top of each other
+  <span> => is an inline element that us usually much smaller and usually belongs inside a div
+						they do not take up an entire block, and do not automatically begin on a new line
+
+
+*************************************************************************
+html structure
+
+	instead of using <div> to structure to structure the page with HTML5 we can use a broader range of semantic elements
+ *<header>  => heading, introduction text, navigation
+ 		<nav>		=> major links of the page grouped together
+ *<section> => a block of content that is grouped by its theme  
+ *<article> => independent content, could be a blog post that can be changed, if you pasted the article into an email it should still make sense
+	<aside>   => block elements usually nested inside of a <section> or <article> usually contining sidebars, inserts or brief explinations 
+	<footer>  => identifies the end of the page
+
+	*its easy to confuse head, header, and heading elements
+	<head> element is for meta data and belongs in the html element above the body
+	<header> element is for introduction text and navigation
+	<h1>.. (heading elements) are for controling the size and stile of headings
+
+	*deciding between <section>, <article>, and <aside> 
+		<article> and <section> contribue to the page structure, <div> is only for applying styles
+		
+
+*************************************************************************
+links
+	
+	relative path => links to pages belonging to that domain (pages/about.html)
+	absolute path => links to external pages (https://www.google.com)
+	 
