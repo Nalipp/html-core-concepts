@@ -3,6 +3,9 @@ lesson 1 / building your first web pages
 	common html terms
 	html document structure
 	common css terms 
+  referencing css
+	css resets
+
 
 *************************************************************************
 common html terms
@@ -37,8 +40,24 @@ html document structure
 common css terms
 
 selectors	        => are used to target elements with the styles we want to apply, they are followed by {} to enclose 
-properties			  =>
-values				   	=>  					
-class selectors   =>
-id selectors      => 
-other selectors   =>
+properties			  => the styles that are applied to a selected element
+										 examples: background-color, font-family
+values				   	=> sets the value for the property  					
+type selectors    => targets elements by their type 
+class selectors   => used to select a group of elements
+id selectors      => used to select a unique element by its unique id
+
+
+*************************************************************************
+referencing css
+
+  link skeleton
+
+	<link rel="stylesheet" href="main.css">
+
+
+*************************************************************************
+css resets
+	helps insure pages are rendered consistently accross different browsers
+  examples: http://meyerweb.com/eric/tools/css/reset/
+						http://necolas.github.io/normalize.css/
