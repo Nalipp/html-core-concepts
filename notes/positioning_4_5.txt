@@ -1,0 +1,44 @@
+lesson 4 / opening the box model
+lesson 5 / positioning content
+
+display
+the box model
+
+****************************************************************
+display
+
+	all elements have a display property
+		most common (block, inline, inline-block, none
+		block					=> takes up the entire available width and breaks into another line
+		inline				=> only takes up space for the size of the element
+		inline-block  => behaves as the block element but dosen't break into another line and has same styling rules as inline  
+
+
+****************************************************************
+the box model
+
+	calculating the box size
+		core		=> display property, element size, width / height values
+		padding
+		border
+		margin
+
+	the size of the box (width and height) is calculated using an additive approach
+
+	
+	manipulating the size of the box
+
+	width
+	  inline elements cannot have a specified width because they expand and contract according to the size of the contents
+		only block and inline-block level elements can have a width value
+
+	height
+		inline height expands and contracts acording to the contents of the element
+		only block and inline-block level elements can have a height value
+
+	margin
+		inline elements cannot have top and bottom margins 
+		block and inline-block margins can have margin-top: and margin-bottom: properties
+
+	padding
+		is accepted by both block and inline level elements however it sometimes bleeds into the above or below elements

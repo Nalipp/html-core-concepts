@@ -1,0 +1,159 @@
+lesson 1 / building your first web pages
+lesson 2 / getting to know html 
+lesson 3 / getting to know css
+
+common html terms
+html document skeleton
+common css terms 
+referencing css
+css resets
+semantic code
+html structure
+links
+the cascade
+
+*************************************************************************
+common html terms
+
+element    => defines the content of the objects on a page 
+examples: h1, a, p, div
+tags		   => the brackets <> surrounding an element make it a tag
+attributes => properties that provide additional information about an element
+	examples: id, class, src, href
+properties have a name (class) and a value (wrapper)
+
+
+	*************************************************************************
+	html document skeleton 
+
+	html skeleton 
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<title>Hello World</title>
+	</head>
+	<body>
+	<h1>Hello World</h1>
+	<p>This is a web page.</p>
+	</body>
+	</html>
+
+
+	*************************************************************************
+	common css terms
+
+	selectors	        => are used to target elements with the styles we want to apply, they are followed by {} to enclose 
+	properties			  => the styles that are applied to a selected element
+	examples: background-color, font-family
+	values				   	=> sets the value for the property  					
+	type selectors    => targets elements by their type 
+	class selectors   => used to select a group of elements
+	id selectors      => used to select a unique element by its unique id
+
+
+	*************************************************************************
+	referencing css
+
+	link skeleton
+
+	<link rel="stylesheet" href="main.css">
+
+
+	*************************************************************************
+	css resets
+
+	helps insure pages are rendered consistently accross different browsers
+	examples: http://meyerweb.com/eric/tools/css/reset/
+	http://necolas.github.io/normalize.css/
+
+
+	*************************************************************************
+	semantic code
+
+	writing semantic code is the practice of using the appropriate elements to structure the page in a way that is easy to read and work with
+	semantic code shows clearly what each peice of content is about
+	examples: <header><ul><li><aside>
+
+	<div> and <spans>
+	do not have any semantic value because they are used as generic containers for styling
+
+	<div>  => is a block element and used for larger groupings of content
+	div's can help organize the sites layout and design
+	they take up a whole block and are stacked on top of each other
+	<span> => is an inline element that us usually much smaller and usually belongs inside a div
+	they do not take up an entire block, and do not automatically begin on a new line
+
+
+	*************************************************************************
+	html structure
+
+	instead of using <div> to structure to structure the page with HTML5 we can use a broader range of semantic elements
+	*<header>  => heading, introduction text, navigation
+	<nav>		=> major links of the page grouped together
+	*<section> => a block of content that is grouped by its theme  
+	*<article> => independent content, could be a blog post that can be changed, if you pasted the article into an email it should still make sense
+	<aside>   => block elements usually nested inside of a <section> or <article> usually contining sidebars, inserts or brief explinations 
+	<footer>  => identifies the end of the page
+
+	*its easy to confuse head, header, and heading elements
+	<head> element is for meta data and belongs in the html element above the body
+	<header> element is for introduction text and navigation
+	<h1>.. (heading elements) are for controling the size and stile of headings
+
+	*deciding between <section>, <article>, and <aside> 
+	<article> and <section> contribue to the page structure, <div> is only for applying styles
+
+
+	*************************************************************************
+	links
+
+relative path  		    			=> links to pages belonging to that domain (pages/about.html)
+	absolute path 		    			=> links to external pages (https://www.google.com)
+	links to an email     			=> <a href="mailto:shay@awesome.com?subject=Reaching%20Out&body=How%20are%20you">Email Me</a>
+	open links in new tab 		  => <a href="http://shayhowe.com/" target="_blank">Shay Howe</a>
+	linking to parts of a page  => 	<body id="top">
+	...
+	<a href="#top">Back to top</a>
+	...
+	</body>
+
+	Getting to know css
+
+	The cascade
+
+	**********************************************************************
+	The cascade
+
+	styles cascade from top to botom, with items down the page overiding previous declarations 
+	the exception to this would be when a selector has a higher specificity weight than delcarations higher up the cascade
+
+	caulculating specificity
+		type-selctor 		=> 0-0-1 (lowest)
+		class-selector 	=> 0-1-0
+		id-selector			=> 1-0-0
+		when combining selectors the first column counts the number of id's in the selector, second counts class, and third counts type
+
+	combined selectors should read right to left, the leftmost selector is the key selector
+	the selectors to the left are the prequalifiers
+
+	example: combined selector specificity weight calculation
+		.hotdog p .mustard
+		0-2-1
+		has a higher speciicity than 
+		.hotdog .mustard
+		0-2-0
+		the first selector combination will take precidence over the second regardless of it's position in the cascade
+
+	it is best practice to keep the specificity weight as low as possible
+	one technique is to keep the specificity weights low is to be modular by adding multiple classes to a style
+	there is not a limit to the number of classes that can be added to a style
+		example of modular code: 
+		<a class="btn btn-danger">..</a>
+
+		btn { font-size: 20px; }
+		btn-danger { color: red; }
+		btn-success { color: green; }
+
+
