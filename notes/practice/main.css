@@ -1,5 +1,4 @@
-
-.button {
+code {
 	background: #2db34a;
 	border-radius: 6px;
 	color: #fff;
@@ -8,24 +7,16 @@
 	padding: 24px 15px;
 	text-align: center;
 }
-
-header, section, aside, footer {
-	margin: 0 1% 24px 1%;
-}
-
-section {
-	float: left;
-	width: 28%;
-}
-
-aside {
-	float: right;
-	width: 58%;
-}
-
+header,
+section,
+aside,
 footer {
-	clear: right;
+	margin: 0 1.5% 24px 1.5%;
+}
+section {
+	display: inline-block;
+	width: 30%;
+}
+footer {
 	margin-bottom: 0;
 }
-
-

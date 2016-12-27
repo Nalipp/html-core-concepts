@@ -3,6 +3,7 @@ lesson 5 / positioning content
 
 display
 the box model
+positioning with floats
 
 ****************************************************************
 display
@@ -24,6 +25,13 @@ the box model
 		margin
 
 	the size of the box (width and height) is calculated using an additive approach
+	so a box with a width of 200px will be 200px plus the right and left padding, border, and margin
+
+		box-sizing changes the rules for calculating the box size
+			box-sizing: content-box; => is the default (additive) 
+			box-sizing: padding-box; => padding is included in width and heigth calculations
+		  box-sizing: border-box;  => (best) padding and border is included in the calculations 
+				(note margin is never included in any of the box-sizing elements)
 
 	
 	manipulating the size of the box
@@ -42,3 +50,75 @@ the box model
 
 	padding
 		is accepted by both block and inline level elements however it sometimes bleeds into the above or below elements
+
+		
+****************************************************************
+positioning with floats
+
+floats allow you to remove an element from the normal flow of the page to the right or left of the parent element
+	surrounding elements wrap around the floated element
+		float property values:
+			float: left;
+			float: right;
+
+the final floated element needs to clear the before floated elements using the clear property.
+		clear: right;
+		clear: left;
+		clear: both; (most common)
+
+clearfix ensures that elements will be styled properly
+	clearfix example
+
+	.group:before,
+	.group:after {
+		content: "";
+		display: table;
+	}
+	.group:after {
+	clear: both;
+	}
+	.group {
+	clear: both;
+ *zoom: 1;
+	}
+
+
+****************************************************************
+positioning with inline-block
+
+	an alternative method for displaying elements on a page is to use the display property with value inline-block
+	inline-block method is especially usefull when displaying elements in a row
+	unlike display: inline; inline-block accepts all box model properties (height, width, margin, border, padding) 
+	unlike display: block; inline-block does not have to take up the entire line
+
+	downsode to the inlin-block method is that it leaves spaces between elements so that the width percentages may not add up
+
+	two ways to fix the spaces:
+
+	method 1:
+
+	alter the html to remove the spaces so that opening tags are pushed up agains previous closing tags
+		instead of 
+	  	<div>
+			</div>
+			<div>
+			</div>
+		use this instead
+			<div>
+			</div><div>
+			</div
+
+	method 2:
+
+	comment out the spaces between the html
+		instead of 
+			<div>
+			</div>
+			<div>
+			</div>
+		use this instead
+			<div><!--
+			--></div>
+			<div><!--
+			--></div>
+			
