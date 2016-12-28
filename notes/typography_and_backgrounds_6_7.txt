@@ -1,0 +1,30 @@
+
+lesson 5 / working with typography
+lesson 5 / setting background and gradients
+
+typeface vs font
+font-properties
+text-properties
+
+****************************************************************
+typeface vs font
+
+	typeface 	=> are the letters that you actually see on the screen, the artistic expression
+	font 		 	=> the computer must have access to the font(format) file in order to render the typeface
+
+	typeface 	=> song
+	font			=> mp3 format
+
+
+****************************************************************
+font properties
+	
+	font-family:
+	font-size:
+	font-style:		normal, italic, oblique, inherit
+	font-variant:	normal, small-caps, inherit
+	font-weight:	normal, bold, bolder, lighter, inherit (also accepts numeric values 300,400... will revert to the nearest available value if not uploaded
+	line-height:  (usually around 1.5% the px size of the font) (sometimes line-height is used to vertically center elements by taking all available height)
+
+	sorthand: font-style, font-variant, font-weight, font-size, line-height, font-family
+	example:  font: italic small-caps bold 14px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;
