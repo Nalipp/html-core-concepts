@@ -4,6 +4,7 @@ lesson 5 / positioning content
 display
 the box model
 positioning with floats
+positioning with the position property
 
 ****************************************************************
 display
@@ -122,3 +123,28 @@ positioning with inline-block
 			<div><!--
 			--></div>
 			
+
+****************************************************************
+positioning with the position property
+
+	*most positioning can be acheived without the position property or box-offset properties but they can be useful for more precision or annimations
+
+	review
+		floats position elements to the right or left of an existing element. The existing element wraps around the floated element
+		positioning with inline-block is great for position elements in columns or grid style format
+		the position property combined with the box-offset properties allows us to be more precise when positioning elements on a page
+
+		position property
+			identifies how an element is positioned on the page and whether it is in the normal flow of the page
+				static   => (default) in the normal flow of the document and cannot accept box-offset properties
+				relative => is in the normal flow of the page and space is always reserved for the element but it can be moved using the box-offset properties
+										an entire block is still reserved for the space and elements do not flow around it
+										the box-offset properties are positioned according to the original reserved space of the element
+										when positioned with the box-offset properties the element does not push other elements around the page, but overlaps them
+				absolute => never appears within the folow of the document and original space is not reserved
+										the box-offset properties are positioned according to the next available parent element with position: relative;
+										if no parent element has the position of relative declared the box-offset propertys with attach to the body 
+
+		box-offset properties (top, right, left, bottom)
+			the box-offset property is used together with the position property 
+  
