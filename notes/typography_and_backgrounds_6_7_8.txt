@@ -1,0 +1,184 @@
+
+lesson 6 / working with typography
+lesson 7 / setting background and gradients
+lesson 8 / creating lists
+
+typeface vs font
+font-properties
+text-properties
+
+background-color
+background-image
+gradient backgrounds
+new background properties
+
+****************************************************************
+typeface vs font
+
+	typeface 	=> are the letters that you actually see on the screen, the artistic expression
+	font 		 	=> the computer must have access to the font(format) file in order to render the typeface
+
+	typeface 	=> song
+	font			=> mp3 format
+
+
+****************************************************************
+font properties
+	
+	font-family:
+	font-size:
+	font-style:		normal, italic, oblique, inherit
+	font-variant:	normal, small-caps, inherit
+	font-weight:	normal, bold, bolder, lighter, inherit (also accepts numeric values 300,400... will revert to the nearest available value if not uploaded
+	line-height:  (usually around 1.5% the px size of the font) (sometimes line-height is used to vertically center elements by taking all available height)
+
+	sorthand: font-style, font-variant, font-weight, font-size, line-height, font-family
+	example:  font: italic small-caps bold 14px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+****************************************************************
+text-properties
+
+	text-align:				left, right, center, justify, inherit
+	text-decoration:	none, underline, overline, line-through, inherit 
+	text-indent:
+	text-shadow:			3px 6px 2px rgba(0, 0, 0, .3) => horizontal offset, vertical offset, blur radious, color 
+	box-shadow:				same as text-shadow but applies to an entire element with two exceptions
+											accepts fourth length value after blur radious to shirnk or expand the size of the shadow
+											accepts an optional inset value as a first value which places the shadow inside instead of outside the element
+	text-transform:		none, capitalize, uppercase, lowercase, inherit
+	letter-spacing:   -.5em;
+	word-spacing:			.25em;
+
+		*when including a google font style in a stylesheet even if the font-family is one word it should be surrounded with "". ex: "Lato",...
+
+
+****************************************************************
+background-color
+	
+	if you are going to use a rgba number for gradients it might be a good idea to add a fallback hex number for IE8
+
+		div {
+			background-color: #121212;
+			background-color: rgba(5, 23, 43, .3)
+		}
+		
+			
+****************************************************************
+background-image
+
+	all background images must use 
+		background-image: url(...);
+
+	background-repeat:		repeat, no-repeat, repeat-x, repeat-y
+	background-position:	20px 10px (horizontal, vertical) 
+													*if one of the values is missing it will default to 50% which, as a result, centers it to the page 
+
+	shorthand ( background-color, background-image, background-position, background-repeat )
+		example:
+			background: #b2b2b2 url("alert.png") 20px 10px no-repeat;
+			
+	multiple backgrounds chained together example
+	background:  url("foreground.png") 0 0 no-repeat, url("middle-ground.png") 0 0 no-repeat, url("background.png") 0 0 no-repeat;
+
+
+****************************************************************
+gradient backgrounds
+
+	example: (with fallback background)
+
+	background: #466368;
+	background: linear-gradient(#648880, #293f50);  // includes a beginning and ending color
+
+	it is also to specify the direction of the gradient
+	background: linear-gradient(to right bottom, #648880, #293f50); // to left right, to bottom top etc.  
+
+	more info (liner gradients)
+	http://meyerweb.com/eric/thoughts/2012/04/26/lineargradient-keywords/
+
+	radial gradient example: (where the gradient change is from inside to outside)
+	background: radial-gradient(#648880, #293f50);
+
+	more info (radial gradients)
+	https://dev.opera.com/articles/css3-radial-gradients/
+
+	gradient generator (and other cool css design tools)
+	http://www.cssmatic.com/
+
+	gradient color stops example (multiple colors)
+	background: linear-gradient(to right, #f6f1d3, #648880, #293f50);
+
+		you can also specify the length of each color stop
+		background: linear-gradient(to right, #f6f1d3, #648880 85%, #293f50);
+
+
+
+****************************************************************
+background-size properties
+
+	background-size:(width height); if we only provide one value, it will apply to the height and the width will preserve the aspect ratio automatically
+																	when specifying the height, the width can be set to auto to preserve the aspect ratio
+																	example: background-size: auto 75%;
+
+	background-size: cover; => the aspect ratio is preserved and the size of the image with completly cover the elements width and height  
+														 this sometimes cases the image to be cut off if the height or width is too large to fit into the element 
+
+	background-size: contain; => the aspect ratio is preserved, the image will be as large as possible while fitting in the element without being cut off
+
+
+
+****************************************************************
+creating lists
+	there are three types of lists (unordered, ordered and description)
+
+	unordered lists => lists where the list items order dosen't matter
+		<ul>
+			<li></li>	
+			<li></li>	
+		</ul>
+
+	ordered list => lists where the order matters
+		default is numbers starting at 1
+		can also have the following unique attributes 
+		start attribute    => designates where the list starts 
+		reversed attribute => reverses the list order
+		value attribute    => allows you to skip over numbers
+
+	  <ol start="30" reversed>
+			<li></li>							// 1.	
+			<li value="9"></li>		// 9.		
+			<li></li>							// 10.	
+		</ol>	
+
+			* lists can be nested indefinatley but both ordered and unordered lists can only have <li> children 
+				an additional list can be nested inside one of the <li> items
+					<ul>
+						<li></li>
+						<li>
+							<ol>
+								<li></li>
+								<li></li>
+							<ol>
+						</li>
+					</ul>
+
+	description list => used for connecting description terms and description descriptions
+											terms can have multiple descriptions and descriptions can have multiple terms
+		<dl>
+			<dt>term</dt>
+				<dd>description</dd>
+			<dt>term</dt>
+				<dd>description</dd>
+		</dl>	
+
+	list items can be styled with the list-style-type: parameter
+	to unstyle a list use list-style-type: none;
+
+	to display list items horizontally instead of vertically (often used for navigation items) use display: inline-block; or float: right/left; 
+		li {
+			display: inline-block;  // requires <!-- -->, or removing the spaces between tags if the items need to remove spaces between items
+			margin: 0 5px;
+			float: left;
+		}
+		
+
