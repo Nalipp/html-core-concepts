@@ -3,5 +3,220 @@ lesson 10 / building forms
 lesson 11 / organizing data with tables
 lesson 12 / writing your best code
 
+images				
+audio
+videos
+inline frames
+figure fig-caption
+
+initializing a form
+text-based input controls 
+form buttons
+hidden input
+organizing (labeling) form data
 
 ****************************************************************
+images				
+	<img src="url" alt="">
+
+	sizing
+		it is best to specify either a height or width in the stylesheet so that a space will be reverved for the page when the page is rendered 
+			img {
+				height: 400px;
+			}
+		if a height is provided the width will be automatic to preserve the aspect ratio
+		if both a height and width are provided it may break the aspect ratio
+
+	positioning
+		by default images are positioned as inline elements and take up the available vertical and horizontal space needed in the line
+		this can cause big gaps in text because the words do not wrap around the image
+		a common approach is to display images as block level elements so that they take up an entire block
+		even better is to float the image to the right or left pushing it outside of the containing block and allowing text to flow around it
+		
+	background-img vs img
+		background-image covers the background of an element
+		<img> tag can be placed directly inside an element
+		
+		<img> 						=> preferd when the image is related to the semantic content of the page
+		background-image	=> preferd when the image is related to the structure of the page or interaction of the page, not specific content
+									
+
+****************************************************************
+audio
+	
+	<audio> is used to embed audio onto a page, possible attributes include
+		<audio src="jazz.ogg" autoplay></audo>
+		<audio src="jazz.ogg" controls></audo>
+
+		to be compatible with all possible browsers
+		<audio controls>
+			<source src="jazz.ogg" type="audio/ogg">
+			<source src="jazz.mp3" type="audio/mpeg">
+			<source src="jazz.wav" type="audio/wav">
+			Please <a href="jazz.mp3" download>download</a> the audio file. // pre HTML5
+		</audio>
+
+
+****************************************************************
+videos
+
+	videos share a lot in common with the audio element
+	one difference is the post attribute which allows you to post an image in the video player before the video is played
+
+	<video src="earth.ogv" controls poster="earth-video-screenshot.jpg"></video>
+
+	<video controls>
+		<source src="earth.ogv" type="video/ogg">
+		<source src="earth.mp4" type="video/mp4">
+		Please <a href="earth.mp4" download>download</a> the video.
+	</video>
+
+	to convert video formats
+	http://media.io/
+
+
+****************************************************************
+inline frames
+
+	<iframe> can be used to embed external web sources commong useses are youtube and google maps
+	<iframe src="https://www.google.com/maps/embed?..."></iframe>
+
+
+****************************************************************
+figure fig-caption
+
+	allows you to add a caption to a media element
+	it may be used to replace the <img> alt="" attribute
+
+
+****************************************************************
+initializing a form
+
+	<form action="/login" method="post">
+	  ...
+	</form>
+
+
+****************************************************************
+text-based input controls 
+
+	(input does not have closing tags)
+		<input type="text" name="username">
+		<input type="date" name="birthday">
+		<input type="time" name="game-time">
+		<input type="email" name="email-address">
+		<input type="url" name="website">
+		<input type="number" name="cost">
+		<input type="tel" name="phone-number">
+		<input type="file" name="file">
+
+	text area (has closing tags) 
+		<textarea name="comment" rows="4" cols="50">Add your comment here</textarea>
+
+non text-based input controls
+
+	radio buttons
+		<input type="radio" name="day" value="Friday" checked> Friday
+		<input type="radio" name="day" value="Saturday"> Saturday
+		<input type="radio" name="day" value="Sunday"> Sunday
+	check boxes
+		<input type="checkbox" name="day" value="Friday" checked> Friday
+		<input type="checkbox" name="day" value="Saturday"> Saturday
+		<input type="checkbox" name="day" value="Sunday"> Sunday
+	drop-down lists
+		<select name="day">
+			<option value="Friday" selected>Friday</option>
+			<option value="Saturday">Saturday</option>
+			<option value="Sunday">Sunday</option>
+		</select>
+	multiple selections
+		<select name="day" multiple>
+			<option value="Friday" selected>Friday</option>
+			<option value="Saturday">Saturday</option>
+			<option value="Sunday">Sunday</option>
+		</select>
+
+		
+****************************************************************
+form buttons
+	submit input vs submit button
+	
+	there are only small differences between the two input types
+	
+	submit input (no open and closing tags)
+		you must declare a type (type="submit") and the value is the text that appears in the button
+	
+			<input type="submit" name="submit" value="Send">
+
+	submit button (open and closing tags)
+		type is automatically set to type="submit" and is not necessary the value of the text in the button appears between the opening and closing tags	
+
+			<button name="submit">
+				<strong>Send Us</strong> a Message
+			</button>
+
+
+****************************************************************
+hidden input
+
+	when data is does not need to be displayed to the user but still needs to be passed to the server (tracking codes, keys, other information)
+		<input type="hidden" name="tracking-code" value="abc-123">
+
+	however, it is important to not that this information can be seen by inspecting the element and not protected from the user in any way
+
+
+****************************************************************
+organizing (labeling) form data
+
+	<label>
+		there are two methods for attaching a label to a form element
+
+		the label for attribute matches the input id attribute
+			<label for="username">Username</label>
+			<input type="text" name="username" id="username">
+
+		the label element wraps the input element
+			<label>
+			  <input type="text" name="username"> username
+			</label>
+
+	<fieldset> (block level element)
+		a good way to semantically organize a form (by default they include a border that can be altered in css)
+		fieldsets can also contain a <legend> which is used to descript the controls in the fieldset
+
+		<fieldset>
+			<legend>Login</legend>
+			<label>
+				Username
+				<input type="text" name="username">
+			</label>
+			<label>
+				Password
+				<input type="text" name="password">
+			</label>
+		</fieldset>
+
+		* the submit button is outside of the fieldset but inside the form
+
+
+****************************************************************
+form input and attributes
+
+	disable     => turns off a form element so that it cannot be interacted with
+
+		<label>
+			Username
+			<input type="text" name="username" disabled>
+		</label>
+
+	placeholder => shows example text that cannot be interacted with
+	value       => shows text that can be changed or submitted
+	required    => requires a value but the error message cannot be styled
+								 however, invalid elements and form controls can be styled using the :optional and :required CSS pseudo-classes
+
+		<label>
+			Email Address
+			<input type="email" name="email-address" required>
+		</label>
+
+
