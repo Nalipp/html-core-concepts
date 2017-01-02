@@ -1,0 +1,41 @@
+
+****************************************************************
+table
+****************************************************************
+
+<table>
+	<tr>
+		<th scope="col"></th>	
+		<th scope="col"></th>	
+		<th scope="col"></th>	
+	</tr>	
+	<tr>
+		<td></td> 
+		<td></td> 
+		<td></td> 
+	</tr>	
+</table>	
+
+
+
+<table>
+	<caption>Design and Front-End Development Books</caption>
+	<thead>
+		<tr>
+			<th scope="col"></th>
+			<th scope="col"></th>
+		</tr>	
+	</thead>
+	<tbody>
+		<tr>
+		<td></td>
+		<td></td>
+		</tr>	
+	</tbody>	
+	<tfoot>
+		<tr>
+		<td></td>
+		<td></td>
+		</tr>	
+	</tfoot>	
+</table>

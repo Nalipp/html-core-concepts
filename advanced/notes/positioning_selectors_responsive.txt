@@ -1,0 +1,16 @@
+Learn to code advanced html and css
+
+lesson 2 / detailed positioning
+lesson 3 / complex selectors
+lesson 4 / responsive web design
+
+
+*************************************************************************
+detailed positioning
+
+	z-index / z-axis => allows you to control the order that elements stack on each other
+		elements apear on the page according the order they apear on the DOM with elements apearing lower on the DOM gettig place on top of elements higher
+		z-index allows you to control the stacking order regardless of the order on the DOM
+
+		in order to use the z-index property, the element must have display: (relative, absolute, or fixed), same as with the box-offset properties
+		the higher the z-index the more power it has to overlap lower elements

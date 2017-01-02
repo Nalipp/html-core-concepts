@@ -15,6 +15,9 @@ form buttons
 hidden input
 organizing (labeling) form data
 
+creating a table
+table structure
+
 ****************************************************************
 images				
 	<img src="url" alt="">
@@ -219,4 +222,54 @@ form input and attributes
 			<input type="email" name="email-address" required>
 		</label>
 
+
+****************************************************************
+creating a table
+
+	<table>
+		<tr>
+			<th scope="col"></th>	
+			<th scope="col"></th>	
+			<th scope="col"></th>	
+		</tr>	
+		<tr>
+			<td></td> 
+		  <td></td> 
+		  <td></td> 
+		</tr>	
+	</table>	
+
+****************************************************************
+table structure
+
+	<caption> => a title for the table
+	<thead>   => 
+	<tbody>   =>
+	<tfoot>   => outlines the content of the data, can be used to give sum totals or other overall data
+
+	<table>
+		<caption>Design and Front-End Development Books</caption>
+		<thead>
+			<tr>
+				<th scope="col"></th>
+				<th scope="col"></th>
+			</tr>	
+		</thead>
+		<tbody>
+			<tr>
+			<td></td>
+			<td></td>
+			</tr>	
+		</tbody>	
+		<tfoot>
+			<tr>
+			<td></td>
+			<td></td>
+			</tr>	
+		</tfoot>	
+	</table>
+
+
+	<th colspan="2"> => allows you to designate a column to take up multiple widths 
+	<td rowspan="3"> => allows you to designate a row to take up multiple widths 
 
