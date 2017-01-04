@@ -68,4 +68,83 @@ complex selectors
 		div:empty								Selects an element that does not contain any children or text nodes
 		div:not(.awesome)				Selects an element not represented by the stated argument
 	 
-	 
+
+*************************************************************************
+responsive web design
+
+	*************************************************************************
+	breakpoints
+		it is generally a bad idea to use breakpoints at common phone screen sizes
+		instead it is better to make the page responsive and use breakpoints only where the screensize actually causes the page to look funny or (break) 
+		because it will not be possible to always update breakpoints according to phone size styles
+
+	*************************************************************************
+	mobilefirst
+		the process of designing the site to be used on mobile first and then adding media quires later as the viewport grows
+		mobile first example
+			/* Default styles first then media queries */
+			@media screen and (min-width: 400px)  {...}
+			@media screen and (min-width: 600px)  {...}
+			@media screen and (min-width: 1000px) {...}
+			@media screen and (min-width: 1400px) {...}
+
+
+	*************************************************************************
+	flexable layout
+
+		target ÷ context = result
+
+		.container {
+		width: 538px;
+		}
+		section,              section,
+		aside {								aside {
+		margin: 10px;					margin: 1.858736059%; /*  10px ÷ 538px = .018587361 */
+		}											}
+		section {             section {
+		float: left;          float: left;
+		width: 340px;					width: 63.197026%;    /* 340px ÷ 538px = .63197026 */   
+		}											}
+		aside {								aside {
+		float: right;					float: right;
+		width: 158px;					width: 29.3680297%;  /* 158px ÷ 538px = .293680297 */
+		}											}
+
+	*************************************************************************
+	media queries
+		
+		are used when it is more useful to change the styles acording to the screen size
+			@media all and (max-width: 1024px) {...}	
+			@media all and (min-width: 320px) and (max-width: 780px) {...}
+			@media all and (orientation: landscape) {...}
+
+	*************************************************************************
+	flexable media
+	
+		one approach is to make the media take up %100 of the parent container where the container can scale to the grid layout
+			example:
+				img, video, canvas {
+					max-width: 100%;
+				}
+
+		however this approach may cause problems with video and iframe
+			http://alistapart.com/article/creating-intrinsic-ratios-for-video
+		
+	*************************************************************************
+	breakpoints
+		it is generally a bad idea to use breakpoints at common phone screen sizes
+		instead it is better to make the page responsive and use breakpoints only where the screensize actually causes the page to look funny or (break) 
+		because it will not be possible to always update breakpoints according to phone size styles
+
+	*************************************************************************
+	mobilefirst
+		the process of designing the site to be used on mobile first and then adding media quires later as the viewport grows
+		this means mobile user doesn't have to process the styles of the desktop site only to override them later 
+
+		mobile first example
+			/* Default styles first then media queries */
+			@media screen and (min-width: 400px)  {...}
+			@media screen and (min-width: 600px)  {...}
+			@media screen and (min-width: 1000px) {...}
+			@media screen and (min-width: 1400px) {...}
+
